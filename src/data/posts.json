@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "title": "a title",
+      "content": "some content",
+      "createdAt": "2018-01-01"
+    },
+    {
+      "id": "2",
+      "title": "another title",
+      "content": "more content",
+      "createdAt": "2018-01-02"
+    }
+  ]
+}
