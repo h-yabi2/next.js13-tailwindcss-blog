@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Header from './Header';
+import Footer from './Footer';
 
 export const metadata: Metadata = {
   title: 'Next.js v13 Blog Example with TypeScript and Tailwind CSS',
@@ -13,7 +15,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body className="container mx-auto bg-slate-100">
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
