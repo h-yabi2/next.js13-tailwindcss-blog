@@ -11,6 +11,12 @@
       "title": "another title",
       "content": "more content",
       "createdAt": "2018-01-02"
+    },
+    {
+      "id": "3",
+      "title": "yet another title",
+      "content": "even more content",
+      "createdAt": "2018-01-03"
     }
   ]
 }
