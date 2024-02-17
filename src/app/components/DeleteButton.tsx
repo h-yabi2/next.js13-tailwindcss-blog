@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { useRouter } from 'next/navigation';
-import { deleteArticle } from '@/blogAPI';
+// import { deleteArticle } from '@/blogAPI';
 
 type DeleteButtonProps = {
   id: string;
@@ -11,7 +11,12 @@ type DeleteButtonProps = {
 const DeleteButton = ({ id }: DeleteButtonProps) => {
   const router = useRouter();
   const handleDelete = async () => {
-    await deleteArticle(id);
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    await fetch(`${API_URL}/api/${id}`, {
+      method: 'DELETE',
+    });
+
+    // await deleteArticle(id);
     router.push('/');
     router.refresh();
   };
