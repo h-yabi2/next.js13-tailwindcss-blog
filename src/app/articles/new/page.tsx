@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { createArticle } from '@/blogAPI';
+// import { createArticle } from '@/blogAPI';
 
 const CreateBlogPage = () => {
   const router = useRouter();
@@ -16,7 +16,15 @@ const CreateBlogPage = () => {
     // すでて入力済みでない場合は処理を中断
     if (!id || !title || !content) return;
     setLoading(true);
-    await createArticle(id, title, content);
+    // await createArticle(id, title, content);
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    await fetch(`${API_URL}/api/create`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ id, title, content }),
+    });
     setLoading(false);
     router.push(`/`);
     router.refresh();
